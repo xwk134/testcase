@@ -17,6 +17,4 @@ public class Test5 {
         }
     }
 
-
 }
-fun = n(n-1)+n(n-2)
