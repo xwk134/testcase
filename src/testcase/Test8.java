@@ -11,5 +11,9 @@ public class Test8 {
         for(int i=0;i<a.length;i++) {
             System.out.println(a[i]);
         }
+
+        for(int m:a) {
+            System.out.println(m);
+        }
     }
 }
