@@ -1,0 +1,23 @@
+package testcase1;
+
+public class User {
+    int id;
+    String name;
+    String pwd;
+    public User(int id,String name){
+        this.id = id;
+        this.name = name;
+    }
+    public User(int id,String name,String pwd){
+        this.id = id;
+        this.name = name;
+        this.pwd = pwd;
+    }
+
+    public static void main(String[] args) {
+        User u2 = new User(101,"张三");
+        User u3 = new User(102,"李四");
+        System.out.println("他的名字是："+u2.name);
+    }
+}
+

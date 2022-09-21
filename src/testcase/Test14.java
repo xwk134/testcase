@@ -1,24 +1,18 @@
 package testcase;
 
-import java.util.Arrays;
-
 public class Test14 {
     public static void main(String[] args) {
         System.out.println(climbStairs(10));
     }
 
-    public static int climbStairs(int n) {
-        int[] step = new int[n+1];
-        if (n<2){
-            return n;
+    static long climbStairs(int n){
+        if(n==1) {//递归头
+            return 1;
+        }else if(n==2){
+            return 2;
+        }else{//递归体
+            return climbStairs(n-1) + climbStairs(n-2);//f(n) = f(n-1) + f(n-2)
         }
-        step[1] = 1;
-        step[2] =2;
-        for (int i=3; i<step.length;i++) {
-            step[i] = step[i-1] + step[i-2];
-            System.out.println(step[i]);
-        }
-        System.out.println(Arrays.toString(step));
-        return step[n];
     }
+
 }

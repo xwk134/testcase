@@ -6,8 +6,8 @@ package testcase;
 
 public class Test6 {
     public static void main(String[] args) {
-        for (int i = 1; i < 20; i++) {//定义公鸡初始值为1，每次循环加一只，最多19只
-            for (int j = 1; j < 32; j++) {//定义母鸡初始值为1，每次循环加一只，最多31只
+        for (int i = 1; i < 100/5; i++) {//定义公鸡初始值为1，每次循环加一只，最多19只
+            for (int j = 1; j < (100-5-1)/3; j++) {//定义母鸡初始值为1，每次循环加一只，最多31只
                 int k = 100-i -j;//小鸡的值
 //                System.out.printf("公鸡：%s,母鸡：%s,小鸡:%s", i, j, k);//输出公鸡母鸡小鸡的个数
 //                System.out.println();//换行
