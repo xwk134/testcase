@@ -14,10 +14,14 @@ class Vehicle { //交通工具类
     public void stop() {
         System.out.println("停止不动");
     }
+    public Person whoIsPsg() {
+        return new Person();
+    }
 }
 
 class Horse extends Vehicle {
     public void run() {
         System.out.println("马不停蹄");
     }
+
 }
