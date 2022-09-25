@@ -3,6 +3,10 @@ package cn.sxt.oo;
 public class TestSuper {
     public static void main(String[] args) {
         new ChildClass().f();
+
+        Person1 p1 = new Person1();
+        p1.setAge(15);
+        System.out.println(p1.getAge());
     }
 }
 
