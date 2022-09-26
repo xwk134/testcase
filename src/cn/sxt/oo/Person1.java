@@ -1,10 +1,13 @@
 package cn.sxt.oo;
 //面向对象-封装案例
+
 public class Person1 {
+    //属性一般使用private私用属性修饰，只能在当前类内使用
     private int id;
     private String name;
     private int age;
     private boolean man;
+    //为属性提供public修饰的set/get方法
     public void setName(String name){
         this.name = name;
     }

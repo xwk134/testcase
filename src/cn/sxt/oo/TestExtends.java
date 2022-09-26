@@ -6,6 +6,7 @@ public class TestExtends {
         stu.name = "张三";
         stu.height = 175;
         stu.rest();
+        stu.study();
         Student stu2 = new Student("李四",175,"富二代");
         System.out.println(stu2.name);
         System.out.println(stu2 instanceof Student);
@@ -18,8 +19,8 @@ class Person{
     public void rest(){
         System.out.println("休息一会");
     }
-
 }
+
 class Student extends Person{
     String major;
     public void study(){

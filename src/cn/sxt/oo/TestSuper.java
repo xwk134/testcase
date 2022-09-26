@@ -3,9 +3,9 @@ package cn.sxt.oo;
 public class TestSuper {
     public static void main(String[] args) {
         new ChildClass().f();
-
+        //调用Person1类中方法
         Person1 p1 = new Person1();
-        p1.setAge(15);
+        p1.setAge(20);
         System.out.println(p1.getAge());
     }
 }
