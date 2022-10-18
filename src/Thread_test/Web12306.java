@@ -15,7 +15,7 @@ public class Web12306 implements Runnable {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            System.out.println(Thread.currentThread().getName()+"======"+ticketNums--);
+            System.out.println(Thread.currentThread().getName()+"------>"+ticketNums--);
         }
     }
 
