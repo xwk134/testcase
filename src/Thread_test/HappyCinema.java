@@ -16,16 +16,17 @@ public class HappyCinema {
         available.add(9);
         //刘克林要抢的位置
         List<Integer> seats1 = new ArrayList<>();
-        seats1.add(1);
         seats1.add(3);
+
         //张江松要抢的位置
         List<Integer> seats2 = new ArrayList<>();
-        seats2.add(7);
+        seats2.add(3);
         seats2.add(5);
 
         Cinema c = new Cinema(available,"快乐影院");
         new Thread(new Customer(c,seats1),"刘克林").start();
         new Thread(new Customer(c,seats2),"张江松").start();
+        System.out.println("欢迎光临快乐影院，本次抢票的组合为："+seats1+seats2);
     }
 }
 //顾客
@@ -42,9 +43,10 @@ class Customer implements Runnable{
         synchronized (cinema){
             boolean flag = cinema.bookTickets(seats);
             if(flag) {
-                System.out.println("出票成功" + Thread.currentThread().getName() + "-<位置为：" + seats);
+
+                System.out.println("出票成功：" + Thread.currentThread().getName() + "-<位置为：" + seats);
             }else{
-                System.out.println("出票失败" + Thread.currentThread().getName() + "-<位置不够");
+                System.out.println("出票失败：" + Thread.currentThread().getName() + "-<位置被抢");
             }
         }
 
