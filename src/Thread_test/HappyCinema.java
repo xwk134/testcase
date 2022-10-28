@@ -1,41 +1,41 @@
 package Thread_test;
-
 import java.util.ArrayList;
 import java.util.IntSummaryStatistics;
 import java.util.List;
-
 //快乐影院
 public class HappyCinema {
     public static void main(String[] args) {
         //可用位置
         List<Integer> available = new ArrayList<>();
         available.add(1);
-        available.add(3);
+        available.add(4);
         available.add(5);
         available.add(7);
         available.add(9);
         //刘克林要抢的位置
         List<Integer> seats1 = new ArrayList<>();
-        seats1.add(3);
+        seats1.add(4);
 
         //张江松要抢的位置
         List<Integer> seats2 = new ArrayList<>();
-        seats2.add(3);
+        seats2.add(4);
         seats2.add(5);
 
         Cinema c = new Cinema(available,"快乐影院");
         new Thread(new Customer(c,seats1),"刘克林").start();
         new Thread(new Customer(c,seats2),"张江松").start();
-        System.out.println("欢迎光临快乐影院，本次抢票的组合为："+seats1+seats2);
+        System.out.println("欢迎光临快乐影院，本次用户抢票的位置为："+seats1+","+seats2);
     }
 }
 //顾客
 class Customer implements Runnable{
     Cinema cinema;
     List<Integer> seats;
+
     public Customer(Cinema cinema, List<Integer> seats){
         this.cinema=cinema;
         this.seats=seats;
+
     }
 
     @Override
@@ -59,9 +59,7 @@ class Cinema{
     public Cinema(List<Integer> available,String name){
         this.available=available;
         this.name=name;
-
     }
-
     //购票
     public boolean bookTickets(List<Integer> seats){
         System.out.println("可用位置为："+available);
@@ -73,6 +71,7 @@ class Cinema{
         if(available.size()-copy.size()!=seats.size()){
             return false;
         }
+        //成功
         available =copy;
         return true;
     }

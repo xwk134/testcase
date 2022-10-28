@@ -16,7 +16,7 @@ class Mantou{
 }
 //缓冲区
 class SyncStack{
-    Mantou[] buns=new Mantou[10];
+    Mantou[] buns=new Mantou[10];//馒头筐
     int count = 0;//计数器
     //存储 生产
     public synchronized void push(Mantou bun) {
@@ -69,7 +69,7 @@ class Productor extends Thread{
             container.push(new Mantou(i));
             if(i==100){
                 System.out.println("今日馒头生产任务已完成!");
-                Thread.yield();//调用线程的yield()方法；
+                Thread.yield();
             }
         }
 
@@ -91,7 +91,7 @@ class Consumer extends Thread{
             System.out.println("消费-->"+container.pop().id+"个馒头");
             if(i==100){
                 System.out.println("今日馒头已买完!");
-                Thread.yield();//调用线程的yield()方法；
+                Thread.yield();
             }
         }
     }
