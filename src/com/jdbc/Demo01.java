@@ -12,7 +12,7 @@ public class Demo01 {
         data.setProperty("user","root");
         data.setProperty("password","123456");
 
-        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/mytest",data);
+        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/mytest?useUnicode=true&characterEncoding=utf8",data);
         //获取执行sql语句的对象
         Statement stat = conn.createStatement();
         //执行sql语句
