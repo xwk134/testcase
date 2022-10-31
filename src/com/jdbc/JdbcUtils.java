@@ -1,6 +1,7 @@
 package com.jdbc;
 
 import java.io.IOException;
+import java.sql.*;
 import java.util.Properties;
 
 public class JdbcUtils {
@@ -25,6 +26,40 @@ public class JdbcUtils {
 
         } catch (IOException e) {
             e.printStackTrace();
+        }
+
+    }
+
+    public static Connection getConnection() throws SQLException {
+        //获取数据连接对象
+        Connection conn = DriverManager.getConnection(url,username,password);
+        return conn;
+    }
+    public static void close(Connection conn,PreparedStatement ps){
+        close(conn,ps,null);
+    }
+
+    public static void close(Connection conn, PreparedStatement ps, ResultSet rs){
+        if(rs != null){
+            try {
+                rs.close();
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+            }
+        }
+        if(ps != null){
+            try {
+                ps.close();
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+            }
+        }
+        if(conn != null){
+            try {
+                conn.close();
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+            }
         }
 
     }
